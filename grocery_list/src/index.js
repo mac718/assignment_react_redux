@@ -12,13 +12,17 @@ import {addItem, purchaseItem, setPurchasedFilter} from './actions';
 
 const listItems = [
   {
-    name: 'bananas'
+    name: 'bananas',
+    purchased: false
   },
   {
-    name: 'chicken'
+    name: 'chicken',
+    purchased: false
+
   },
   {
-    name: 'booze'
+    name: 'booze',
+    purchased: false
   }
 ]
 
