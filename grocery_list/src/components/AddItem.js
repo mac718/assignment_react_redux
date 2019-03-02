@@ -16,4 +16,8 @@ const AddItem = ({onSubmit}) => {
   )
 }
 
+AddItem.propTypes = {
+  onSubmit: PropTypes.func.isRequired
+}
+
 export default AddItem;

@@ -3,9 +3,22 @@ import List from '../components/List';
 import {addItem} from '../actions';
 import {purchaseItem} from '../actions';
 
+const getVisibleItems = (items, filter) => {
+  switch (filter) {
+    case 'SHOW_ALL':
+      return items
+    case 'SHOW_PURCHASED':
+      return items.filter(item => item.purchased)
+    case 'SHOW_UNPURCHASED':
+      return items.filter(item => !item.purchased)
+    default:
+      return items;
+  }
+}
+
 const mapStateToProps = state => {
   return {
-    list: state.list
+    list: getVisibleItems(state.list, state.listFilters)
   }
 }
 

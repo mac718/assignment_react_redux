@@ -21,4 +21,9 @@ const List = ({list, purchaseItem}) => {
   )
 }
 
+List.propTypes = {
+  list: PropTypes.array.isRequired,
+  purchaseItem: PropTypes.func.isRequired
+}
+
 export default List;
