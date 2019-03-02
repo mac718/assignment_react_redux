@@ -13,16 +13,19 @@ import {addItem, purchaseItem, setPurchasedFilter} from './actions';
 const listItems = [
   {
     name: 'bananas',
-    purchased: false
+    purchased: false,
+    id: 1
   },
   {
     name: 'chicken',
-    purchased: false
+    purchased: false,
+    id: 2
 
   },
   {
     name: 'booze',
-    purchased: false
+    purchased: false,
+    id: 3
   }
 ]
 

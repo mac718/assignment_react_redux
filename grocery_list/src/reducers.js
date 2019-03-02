@@ -11,10 +11,17 @@ function list(state = [], action) {
     case PURCHASE_ITEM:
       return state.map(item => {
         if (item.id === action.data) {
+          if (!item.purchased) {
+            return {
+              ...item,
+              purchased: true,
+            }
+          } 
           return {
-            ...item,
-            purchased: true,
-          }
+              ...item,
+              purchased: false,
+            }
+
         }
         return item;
       })

@@ -1,5 +1,6 @@
 import {connect} from 'react-redux';
 import {PurchaseItem} from '../actions';
+import PurchaseUnpurchaseItem from '../components/PurchaseUnpurchaseItem';
 
 const mapStateToProps = state => {
   return {
@@ -7,15 +8,18 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, id) => {
   return {
-    onClick: (e, id) => {
-      e.preventDefault();
-
-      // list.map(item => {
-      //   if (item )
+    purchaseItem: id => dispatch(purchaseItem(id))
       })
 
     }
   }
 }
+
+// const PurchaseItemContainer = connect(
+//   mapDispatchToProps,
+//   mapDispatchToProps,
+// )(PurchaseUnpurchaseItem)
+
+// export default PurchaseItemContainer;

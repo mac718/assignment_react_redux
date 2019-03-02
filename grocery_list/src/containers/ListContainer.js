@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import List from '../components/List';
 import {addItem} from '../actions';
+import {purchaseItem} from '../actions';
 
 const mapStateToProps = state => {
   return {
@@ -8,15 +9,17 @@ const mapStateToProps = state => {
   }
 }
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     addItem: data => dispatch(addItem(data))
-//   } 
-// }
+const mapDispatchToProps = dispatch => {
+  return {
+    purchaseItem: id => {
+      dispatch(purchaseItem(id))
+    }
+  } 
+}
 
 const ListContainer = connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(List);
 
 export default ListContainer;
