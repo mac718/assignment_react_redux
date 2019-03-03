@@ -11,6 +11,12 @@ const getVisibleItems = (items, filter) => {
       return items.filter(item => item.purchased)
     case 'SHOW_UNPURCHASED':
       return items.filter(item => !item.purchased)
+    case 'fruit/veg':
+      return items.filter(item => item.category === 'fruit/veg')
+    case 'meat':
+      return items.filter(item => item.category === 'meat')
+    case 'booze':
+      return items.filter(item => item.category === 'booze')
     default:
       return items;
   }

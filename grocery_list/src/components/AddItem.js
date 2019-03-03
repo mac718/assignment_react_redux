@@ -8,8 +8,14 @@ const AddItem = ({onSubmit}) => {
   return(
     <form className='AddItem' onSubmit={onSubmit}>
       <h1>Add Item</h1>
-      <InputGroup name='name' labelText='Item'>
+      <InputGroup name='name' labelText='Name'>
         <Input className='form-control' style={{width: '25%', margin: 'auto'}}name='name' />
+      </InputGroup>
+      <InputGroup name='price' labelText='Price'>
+        <Input className='form-control' style={{width: '25%', margin: 'auto'}}name='price' />
+      </InputGroup>
+      <InputGroup name='category' labelText='Category'>
+        <Input className='form-control' style={{width: '25%', margin: 'auto'}}name='category' />
       </InputGroup>
       <Button type='submit' color='primary'>Add Item to List</Button>
     </form>

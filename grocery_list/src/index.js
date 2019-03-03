@@ -14,17 +14,23 @@ const listItems = [
   {
     name: 'bananas',
     purchased: false,
+    price: '$.65',
+    category: 'fruit/veg',
     id: 1
   },
   {
     name: 'chicken',
     purchased: false,
+    price: '$2.40',
+    category: 'meat',
     id: 2
 
   },
   {
     name: 'booze',
     purchased: false,
+    price: '$40',
+    category: 'booze',
     id: 3
   }
 ]
