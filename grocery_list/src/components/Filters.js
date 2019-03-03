@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import FilterLinkContainer from '../containers/FilterLinkContainer';
 import CategoriesDropdownContainer from '../containers/CategoriesDropdownContainer';
+import SortDropdownContainer from '../containers/SortDropdownContainer';
 
 const Filters = () => {
   return (
@@ -19,6 +20,10 @@ const Filters = () => {
       </FilterLinkContainer>
       {'  '}
       <CategoriesDropdownContainer />
+      {'  '}
+      <SortDropdownContainer />
+      
+
     </div>
   )
 

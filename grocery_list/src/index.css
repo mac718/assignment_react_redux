@@ -16,3 +16,17 @@ code {
 li {
   list-style: none;
 }
+
+#list {
+  width: 20%;
+  margin: 25px auto;
+
+}
+
+.purchased {
+  float: left;
+}
+
+#CategoriesDropdown, #SortDropdown {
+  margin-bottom: 25px;
+}

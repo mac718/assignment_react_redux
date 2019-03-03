@@ -36,6 +36,8 @@ function listFilters(state = 'SHOW_ALL', action) {
       return action.data
     case SET_CATEGORY_FILTER:
       return action.data
+    case SET_SORT_TYPE:
+      return action.data
     default:
       return state      
   }

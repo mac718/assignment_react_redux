@@ -17,6 +17,30 @@ const getVisibleItems = (items, filter) => {
       return items.filter(item => item.category === 'meat')
     case 'booze':
       return items.filter(item => item.category === 'booze')
+    case 'ascending':
+      return items.concat().sort((a, b) => {
+        var nameA = a.name.toUpperCase();
+        var nameB = b.name.toUpperCase();  
+        if (nameA < nameB) {
+          return -1;
+        }
+        if (nameA > nameB) {
+          return 1;
+        }
+        return 0;
+      }) 
+    case 'descending':
+      return items.concat().sort((a, b) => {
+        var nameA = a.name.toUpperCase(); 
+        var nameB = b.name.toUpperCase(); 
+        if (nameA > nameB) {
+          return -1;
+        }
+        if (nameA < nameB) {
+          return 1;
+        }
+        return 0;
+      }) 
     default:
       return items;
   }
