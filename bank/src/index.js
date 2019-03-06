@@ -1,25 +1,45 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/js/dist/collapse';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import {Provider} from 'react-redux'
 import { createStore } from 'redux';
 import bank from './reducers';
-import { selectAccount, deposit } from './actions';
+//import { selectAccount, deposit } from './actions';
 
-const store = createStore(bank);
+const accountsArr = [
+  {
+    name: 'Warren B',
+    balance: 87000000000,
+    accountNo: 1,
+    thing: 'a'
+  },
+  {
+    name: 'Jimbo Jones',
+    balance: 25,
+    accountNo: 2,
+    thing: 'b'
+  },
+  {
+    name: 'Pickle Rick',
+    balance: 1000000000000000000,
+    accountNo: 3,
+    thing: 'c'
+  }
+]
 
-let unsubscribe = store.subscribe(() => {
-  console.log(store.getState());
+const store = createStore(bank, {
+  accounts: accountsArr
 });
 
-store.dispatch(selectAccount('Dick'))
-
-store.dispatch(deposit({id:1, amount: 100}));
-
-unsubscribe();
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

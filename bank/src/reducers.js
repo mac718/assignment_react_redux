@@ -1,22 +1,7 @@
 import { SELECT_ACCOUNT, DEPOSIT, WITHDRAW } from './actions';
 
-const initialState = {
-  accounts: [
-    {
-      id: 1,
-      name: 'Dick Stein',
-      balance: 11
-    },
-    {
-      id: 2,
-      name: 'Warren B',
-      balance: 87000000000
-    }
-  ],
-  currentAccount: null,
-}
 
-function bank(state = initialState, action) {
+function bank(state = [], action) {
   switch (action.type) {
     case SELECT_ACCOUNT:
       return {
@@ -29,25 +14,25 @@ function bank(state = initialState, action) {
         })[0]
       }
     case DEPOSIT:
-      return state.accounts.map(account => {
-        if (account.id === action.data.id) {
+      return { accounts: state.accounts.map(account => {
+        if (account.accountNo === action.data.id) {
           return {
           ...account,
-          balance: account.balance + action.data.amount
+          balance: account.balance + parseInt(action.data.amount)
           }
         }
         return account
-        })
+        })}
     case WITHDRAW:
-      return state.accounts.map(account => {
-        if (account.id === action.data.id) {
+      return { accounts: state.accounts.map(account => {
+        if (account.accountNo === action.data.id) {
           return {
           ...account,
-          balance: account.balance - action.data.amount
+          balance: account.balance - parseInt(action.data.amount)
           }
         }
         return account
-        })
+        })}
     default: 
       return state;
   }

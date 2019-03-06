@@ -1,6 +1,6 @@
 export const SELECT_ACCOUNT = 'SELECT_ACCOUNT';
 export const  DEPOSIT = 'DEPOSIT';
-export const WITHRAW = 'WITHRAW';
+export const WITHDRAW = 'WITHDRAW';
 
 export function selectAccount(data) {
   return {
@@ -18,7 +18,7 @@ export function deposit(data) {
 
 export function withdraw(data) {
   return {
-    type: DEPOSIT,
+    type: WITHDRAW,
     data,
   }
 }

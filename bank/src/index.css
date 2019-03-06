@@ -12,3 +12,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+#Accounts {
+  width: 50%;
+  margin: auto;
+}
+
+.Deposit, .Withdraw, .Transfer {
+  width: 50%;
+  margin: auto;
+}
+
+.depositAmount, .withdrawAmount, .transferAmount, .transferAccount {
+  width: 100px;
+}
